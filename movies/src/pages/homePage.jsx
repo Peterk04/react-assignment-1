@@ -4,6 +4,7 @@ import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
+import Alert from "@mui/material/Alert";
 
 const HomePage = (props) => {
 
@@ -28,13 +29,16 @@ const HomePage = (props) => {
   const addToFavorites = (movieId) => true
 
   return (
-    <PageTemplate
-      title="Discover Movies"
-      movies={movies}
-      action={(movie) => {
-        return <AddToFavoritesIcon movie={movie} />
-      }}
-    />
+    <>
+      <Alert severity="info" sx={{ mb: 2 }}>
+        Browse the latest movies and add your favourites!
+      </Alert>
+      <PageTemplate
+        title="Discover Movies"
+        movies={movies}
+        action={(movie) => <AddToFavoritesIcon movie={movie} />}
+      />
+    </>
   );
 
 };
