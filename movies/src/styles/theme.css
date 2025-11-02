@@ -1,0 +1,23 @@
+body {
+    background-color: #000;
+    color: #c0c0c0;
+    font-family: system-ui, sans-serif;
+    margin: 0;
+  }
+  
+  a {
+    color: #b22222;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #1e3a8a;
+  }
+  
+  .card, .panel {
+    background-color: #121212;
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  
