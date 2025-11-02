@@ -6,10 +6,12 @@ import useMovie from "../hooks/useMovie";
 import { getMovie } from '../api/tmdb-api'
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner'
-// import useMovie from "../hooks/useMovie";   Redundant
+import Button from "@mui/material/Button";
+import { useNavigate} from "react-router";
 
-const MoviePage = (props) => {
+const MoviePage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { data: movie, error, isPending, isError } = useQuery({
     queryKey: ['movie', { id: id }],
     queryFn: getMovie,
@@ -30,6 +32,13 @@ const MoviePage = (props) => {
         <>
           <PageTemplate movie={movie}>
             <MovieDetails movie={movie} />
+            <Button
+              variant="contained"
+              onClick={() => navigate(`/movies/${id}/similar`)}
+                sx={{ mt: 1}}
+            >
+              Similar movies
+            </Button>
           </PageTemplate>
         </>
       ) : (
