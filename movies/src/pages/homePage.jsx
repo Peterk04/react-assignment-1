@@ -31,7 +31,7 @@ const HomePage = (props) => {
   return (
     <>
       <Alert severity="info" sx={{ mb: 2 }}>
-        Browse the latest movies and add your favourites!
+        Welcome to my Assignment 1 
       </Alert>
       <PageTemplate
         title="Discover Movies"
